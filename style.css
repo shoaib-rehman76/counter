@@ -1,0 +1,241 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #ef8537;
+  --text-color: #ec9150;
+}
+
+body {
+  background-color: #000;
+  font-family: "Roboto Condensed", sans-serif;
+}
+
+ul li {
+  list-style: none;
+}
+
+small {
+  text-transform: uppercase;
+}
+
+.counter-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  & .counter {
+    color: white;
+    width: 50%;
+
+    & ul {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      & li {
+        padding-inline: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+
+        &:not(:last-child)::after {
+          content: "";
+          position: absolute;
+          border: 1px solid white;
+          height: 60px;
+          top: 29%;
+          right: 0%;
+        }
+
+        & span {
+          font-size: 7rem;
+          font-weight: 800;
+          color: white;
+        }
+
+        & small {
+          color: white;
+          margin-top: -1rem;
+          font-weight: 700;
+          font-size: 1.3rem;
+        }
+      }
+    }
+
+    & .counter-text {
+      text-transform: uppercase;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-weight: 600;
+      font-size: 1.8rem;
+      & span {
+        margin-left: 0.2rem;
+        color: var(--primary-color);
+      }
+    }
+
+    & .counter-logo {
+      text-align: center;
+      margin-top: 1.5rem;
+      margin-inline: auto;
+      display: flex;
+      justify-content: center;
+      position: relative;
+      width: 500px;
+      &::after {
+        content: "Hier klicken!";
+        position: absolute;
+        bottom: -30px;
+        right: 80px;
+        color: white;
+        transform: rotate(-30deg);
+        font-weight: 700;
+      }
+
+      & a {
+        position: relative;
+        margin-top: 1.5rem;
+
+        & img {
+          width: 130px;
+        }
+      }
+
+      & .arrow {
+        position: absolute;
+        top: 65px;
+        right: 125px;
+        width: 60px;
+      }
+    }
+  }
+
+  & .counter-footer {
+    position: absolute;
+    bottom: 1rem;
+    display: flex;
+    gap: 2rem;
+
+    & a {
+      text-decoration: none;
+      color: white;
+    }
+  }
+}
+
+@media only screen and (max-width: 426px) {
+  body {
+    overflow: hidden;
+  }
+  .counter-wrapper {
+    & .counter {
+      width: 100%;
+      & ul {
+        & li {
+          &:not(:last-child)::after {
+            content: "";
+            position: absolute;
+            border: 1px solid white;
+            height: 30px;
+            top: 29%;
+            right: 0%;
+          }
+
+          & span {
+            font-size: 2.6rem;
+            font-weight: 800;
+            color: white;
+          }
+
+          & small {
+            color: white;
+            margin-top: -0.2rem;
+            font-weight: 700;
+            font-size: 0.8rem;
+          }
+        }
+      }
+
+      & .counter-text {
+        text-transform: uppercase;
+        color: white;
+        font-size: 1.3rem;
+        margin-bottom: 0.8rem;
+        font-weight: 500;
+        & span {
+          margin-left: 0.2rem;
+          color: var(--primary-color);
+          font-weight: 500;
+        }
+      }
+
+      & .counter-logo {
+        text-align: center;
+        margin-top: 2rem;
+        margin-inline: auto;
+        display: flex;
+        justify-content: center;
+        position: relative;
+        width: 100px;
+        /* &::after {
+          content: "Hier klicken!";
+          position: absolute;
+          bottom: -50px;
+          right: -100px;
+          color: white;
+          transform: rotate(-30deg);
+          font-weight: 700;
+        }
+        & img:first-child {
+          width: 80px;
+          position: relative;
+          display: block;
+        }
+
+        & img:last-child {
+          position: absolute;
+          top: 20px;
+          right: -55px;
+          width: 60px;
+        } */
+        &::after {
+          content: "Hier klicken!";
+          position: absolute;
+          bottom: -35px;
+          right: -95px;
+          color: white;
+          transform: rotate(-30deg);
+          font-weight: 700;
+        }
+
+        & a {
+          position: relative;
+          margin-top: 1rem;
+
+          & img {
+            width: 90px;
+          }
+        }
+
+        & .arrow {
+          position: absolute;
+          top: 50px;
+          right: -45px;
+          width: 50px;
+        }
+      }
+    }
+  }
+}
